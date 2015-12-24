@@ -101,6 +101,7 @@ void list_reverse(List* l) {
         list_insert(new_list, 0, n->data);
     }
 
+    node_destroy_cascaded(l->head);
     l->head = new_list->head;
     free(new_list);
 }
